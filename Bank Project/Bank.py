@@ -1,13 +1,15 @@
 # SOURCE CODE FOR BANK MANAGEMENT
 import datetime
 import mysql.connector
+import config
 
 print("****BANK TRANSACTION****")
 print("--Welcome to the Bank--")
 print("========================")
 
 # Connecting to MySQL
-mydb = mysql.connector.connect(host="localhost",  user="root", passwd="root")
+mydb = mysql.connector.connect(
+    host="localhost",  user=config.User['user'], passwd=config.User['password'])
 mycursor = mydb.cursor()
 
 # CREATING DATABASE
